@@ -13,6 +13,8 @@ public class ClassLoadersExample
         // using the ClassLoader file it is possible to retrieve the default system class loader
         ClassLoader systemClassLoader = ClassLoader.getSystemClassLoader();
 
+        System.out.println("system class loader " + systemClassLoader.getClass().getName());
+        
         // you can get the used class loader for a given class
         ClassLoader classClassLoader = ReflectableClass.class.getClassLoader();
 

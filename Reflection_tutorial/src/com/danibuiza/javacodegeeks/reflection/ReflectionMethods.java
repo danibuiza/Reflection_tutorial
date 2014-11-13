@@ -37,9 +37,8 @@ public class ReflectionMethods
 
             // Parameters
             Parameter[] parameters = method.getParameters();
-            System.out.println( parameters.length + " parameters:" );// also
-                                                                     // method.getParameterCount()
-                                                                     // is possible
+            System.out.println( parameters.length + " parameters:" );
+            // also method.getParameterCount() is possible
             for( Parameter parameter : parameters )
             {
                 System.out.println( "parameter name: " + parameter.getName() );

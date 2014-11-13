@@ -17,6 +17,7 @@ public class ReflectionEnums
 
     public static void main( String[] args ) throws ClassNotFoundException
     {
+        //we create an instance of the enum
         ExampleEnum value = ExampleEnum.FOUR;
 
         // checks if the class is an enum
@@ -29,8 +30,8 @@ public class ReflectionEnums
             System.out.println( "enum constant " + exampleEnum );
         }
 
-        Class<?> c = Class.forName( "com.danibuiza.javacodegeeks.reflection.ExampleEnum" );
-        Field[] flds = c.getDeclaredFields();
+        //Class<?> c = Class.forName( "com.danibuiza.javacodegeeks.reflection.ExampleEnum" );
+        Field[] flds = value.getClass().getDeclaredFields();
         for( Field f : flds )
         {
             // check for each field if it is an enum constant or not

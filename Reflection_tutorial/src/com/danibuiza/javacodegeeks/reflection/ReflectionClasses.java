@@ -16,7 +16,7 @@ import java.lang.reflect.Parameter;
 public class ReflectionClasses
 {
     public static void main( String[] args ) throws NoSuchFieldException, SecurityException, NoSuchMethodException,
-            InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException
+            InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, ClassNotFoundException
     {
         String stringer = "this is a String called stringer";
 
@@ -50,18 +50,18 @@ public class ReflectionClasses
         // get all visible constructors
         Constructor<?>[] constructors = stringGetClass.getConstructors();
 
-        //all constructors
+        // all constructors
         Constructor<?>[] declaredConstructors = stringclass.getDeclaredConstructors();
-        
-        System.out.println("number of visible constructors " + constructors.length);
 
-        System.out.println("number of total constructors " + declaredConstructors.length);
+        System.out.println( "number of visible constructors " + constructors.length );
+
+        System.out.println( "number of total constructors " + declaredConstructors.length );
 
         for( Constructor<?> constructor : constructors )
         {
-            int numberParams = constructor.getParameterCount() ;
+            int numberParams = constructor.getParameterCount();
             System.out.println( "constructor " + constructor.getName() );
-            System.out.println( "number of arguments " + numberParams);
+            System.out.println( "number of arguments " + numberParams );
             // public, private, etc.
             int modifiersConstructor = constructor.getModifiers();
             System.out.println( "modifiers " + modifiersConstructor );
@@ -73,7 +73,7 @@ public class ReflectionClasses
             if( numberParams == 0 )
             {
                 // can be used to create new instances
-                String danibuizaString = (String)constructor.newInstance(  );
+                String danibuizaString = (String)constructor.newInstance();
             }
         }
         // gets the canonical name
@@ -94,5 +94,10 @@ public class ReflectionClasses
 
         Class<?> enclosingClass = stringGetClass.getEnclosingClass();
         System.out.println( "enclosing class " + enclosingClass );
+
+        // it is possible to create instance at runtime
+        String newInstanceStringClass = stringclass.newInstance();
+
+        String otherInstance = (String)Class.forName( "java.lang.String" ).newInstance();
     }
 }
