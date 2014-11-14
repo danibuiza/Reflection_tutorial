@@ -19,9 +19,8 @@ public class ReflectionGenerics
 
     private static void extractGenericsArguments() throws NoSuchMethodException
     {
-        // warning, not nice
         // we retrieve a method
-        Method getInternalListMethod = GenericsClass.class.getMethod( "getInternalList", null );
+        Method getInternalListMethod = GenericsClass.class.getMethod( "getInternalList" );
 
         // we get the return type
         Type getInternalListMethodGenericReturnType = getInternalListMethod.getGenericReturnType();
@@ -34,9 +33,8 @@ public class ReflectionGenerics
             Type[] typeArguments = parameterizedType.getActualTypeArguments();
             for( Type typeArgument : typeArguments )
             {
-                // warning not nice
                 // we can work with that now
-                Class typeClass = (Class)typeArgument;
+                Class<?> typeClass = (Class<?>)typeArgument;
                 System.out.println( "typeArgument = " + typeArgument );
                 System.out.println( "typeClass = " + typeClass );
             }

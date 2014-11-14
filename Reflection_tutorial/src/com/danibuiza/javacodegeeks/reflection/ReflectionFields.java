@@ -15,6 +15,7 @@ public class ReflectionFields
     {
         String stringer = "this is a String called stringer";
 
+        @SuppressWarnings( "unused" )
         Class<? extends String> stringGetClass = stringer.getClass();
 
         Class<String> stringclass = String.class;

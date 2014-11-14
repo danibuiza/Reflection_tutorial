@@ -16,7 +16,8 @@ import java.lang.reflect.Parameter;
 public class ReflectionClasses
 {
     public static void main( String[] args ) throws NoSuchFieldException, SecurityException, NoSuchMethodException,
-            InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, ClassNotFoundException
+            InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException,
+            ClassNotFoundException
     {
         String stringer = "this is a String called stringer";
 
@@ -27,12 +28,15 @@ public class ReflectionClasses
         Class<String> stringclass = String.class;
 
         // get all accesible methods
+        @SuppressWarnings( "unused" )
         Method[] methods = stringclass.getMethods();
 
         // get all declared methods, also non public
+        @SuppressWarnings( "unused" )
         Method[] declaredMethods = stringGetClass.getDeclaredMethods();
 
         // gets a specific method
+        @SuppressWarnings( "unused" )
         Method equalsMethod = stringGetClass.getMethod( "equalsIgnoreCase", String.class );
 
         // for more info http://docs.oracle.com/javase/7/docs/api/java/lang/reflect/Modifier.html
@@ -66,13 +70,16 @@ public class ReflectionClasses
             int modifiersConstructor = constructor.getModifiers();
             System.out.println( "modifiers " + modifiersConstructor );
             // array of parameters, more info in the methods section
+            @SuppressWarnings( "unused" )
             Parameter[] parameters = constructor.getParameters();
             // annotations array, more info in the annotations section
+            @SuppressWarnings( "unused" )
             Annotation[] annotations = constructor.getAnnotations();
 
             if( numberParams == 0 )
             {
                 // can be used to create new instances
+                @SuppressWarnings( "unused" )
                 String danibuizaString = (String)constructor.newInstance();
             }
         }
@@ -80,6 +87,7 @@ public class ReflectionClasses
         System.out.println( "canonical name " + stringGetClass.getCanonicalName() );
 
         // get the component type
+        @SuppressWarnings( "unused" )
         Class<?> componentType = stringGetClass.getComponentType();
 
         // get the type name
@@ -96,8 +104,10 @@ public class ReflectionClasses
         System.out.println( "enclosing class " + enclosingClass );
 
         // it is possible to create instance at runtime
+        @SuppressWarnings( "unused" )
         String newInstanceStringClass = stringclass.newInstance();
 
+        @SuppressWarnings( "unused" )
         String otherInstance = (String)Class.forName( "java.lang.String" ).newInstance();
     }
 }

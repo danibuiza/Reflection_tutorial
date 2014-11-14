@@ -81,9 +81,6 @@ public class ReflectionCollections
         // via reflection
         String[] strArrayOne = (String[])Array.newInstance( String.class, 10 );
 
-        // primitive types work as well
-        int[] intArrayOne = (int[])Array.newInstance( int.class, 10 );
-
         // it contains utility methods for setting values
         Array.set( strArrayOne, 0, "member0" );
         Array.set( strArrayOne, 1, "member1" );
@@ -97,6 +94,9 @@ public class ReflectionCollections
 
         // also methods to get the lenght of the array
         System.out.println( "lenght strArrayOne: " + Array.getLength( strArrayOne ) );
+
+        // primitive types work as well
+        int[] intArrayOne = (int[])Array.newInstance( int.class, 10 );
 
         Array.set( intArrayOne, 0, 1 );
         Array.set( intArrayOne, 1, 2 );

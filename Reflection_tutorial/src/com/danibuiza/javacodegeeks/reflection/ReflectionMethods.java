@@ -71,6 +71,7 @@ public class ReflectionMethods
 
         // it is possible to invoke methods on an object as well
         Object indexOf = methodIndexOf.invoke( stringer, "called" );
+        @SuppressWarnings( "unused" )
         Object chartAt = methodCharAt.invoke( stringer, 10 );
 
         // using the return type we can cast the results of the desired methods

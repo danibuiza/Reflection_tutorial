@@ -1,5 +1,10 @@
 package com.danibuiza.javacodegeeks.reflection;
 
+/**
+ * Class to show usage of getters and setters in reflection
+ * 
+ * @author dgutierrez-diez
+ */
 public class Car
 {
 
